@@ -1,35 +1,16 @@
-const length = {term:['mm', 'cm', 'dm', 'm', 'km'], multiply:[1, 10, 100, 1000, 1000000]};
-const weight = {term:['mcg', 'mg', 'g', 'kg', 't'], multiply:[1, 1000, 1000000, 1000000000, 1000000000000]};
-
-console.log(`${length.term.includes('mm')}\n${weight.multiply}`);
-
-/*
-
-// node convert.js 5.5 m to cm
-
-// Array zum Speichern der Argumente
-var input = process.argv.slice(2);
+const LENGTH = {term:['mm', 'cm', 'dm', 'm', 'km'], multiply:[1, 10, 100, 1000, 1000000]};
+const WEIGHT = {term:['mcg', 'mg', 'g', 'kg', 't'], multiply:[1, 1000, 1000000, 1000000000, 1000000000000]};
+/*if(process.argv.LENGTH == 6 && !isNaN(process.argv[2 + 0]) && process.argv[2 + 2] === 'to' && ((LENGTH.term.includes(process.argv[2 + 1]) && LENGTH.term.includes(process.argv[2 + 3])) || (WEIGHT.term.includes(process.argv[2 + 1]) && WEIGHT.term.includes(process.argv[2 + 3]))))
+    console.log('ja');*/
 
 
-
-// Prüfen, ob Argumente Stimmen
-if(input.length != 4) {
-    errorOut();
-}
-else if(isNaN(input[0])) {
-    errorOut();
-}
-else if(checkConvertType(input[1], input[3])) {
-    errorOut();
-}
-else if(input[3] !== 'to') {
-    errorOut();
-}
-
-
+//console.log(LENGTH.term.includes(process.argv[3]));
+//console.log(LENGTH.term.includes(process.argv[5]));
+console.log((LENGTH.term.includes(process.argv[2 + 1]) && LENGTH.term.includes(process.argv[2 + 3])) || (WEIGHT.term.includes(process.argv[2 + 1]) && WEIGHT.term.includes(process.argv[2 + 3])));
+//console.log(`${LENGTH.term.includes('mm')}\n${WEIGHT.multiply}`);
 
 // Error ausgeben von falschen Argumenten
-function errorOut() {
-    console.error('Invalid arguments, usage: node converter.js <float> <length, weight in short Terms> to <length, weight in short Terms>');
+/*function errorOut() {
+    console.error('Invalid arguments, usage: node converter.js <float> <LENGTH, WEIGHT in short Terms> to <LENGTH, WEIGHT in short Terms>');
     process.exit(-1);
 }*/
